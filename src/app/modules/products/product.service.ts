@@ -69,7 +69,7 @@ const getProductByIdFromDB = async (productId: string) => {
 
 const updateProductByIdInDB = async (
   productId: string,
-  productData: Product
+  productData: Partial<Product>
 ) => {
   const product = await ProductModel.findByIdAndUpdate(productId, productData, {
     new: true,

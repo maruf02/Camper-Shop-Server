@@ -5,5 +5,9 @@ export type Product = {
   category: string;
   quantity: number;
   ratings: number;
-  images: string;
+  Mimages: string;
+  images2: string;
+  images3: string;
+  images4: string;
+  images5: string;
 };

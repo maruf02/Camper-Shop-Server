@@ -26,7 +26,23 @@ const productSchema = new Schema<Product>({
     type: Number,
     required: true,
   },
-  images: {
+  Mimages: {
+    type: String,
+    required: true,
+  },
+  images2: {
+    type: String,
+    required: true,
+  },
+  images3: {
+    type: String,
+    required: true,
+  },
+  images4: {
+    type: String,
+    required: true,
+  },
+  images5: {
     type: String,
     required: true,
   },
