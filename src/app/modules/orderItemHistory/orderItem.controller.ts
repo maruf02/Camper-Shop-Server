@@ -9,20 +9,16 @@ const createOrderItem = async (req: Request, res: Response) => {
     await Promise.all(
       orderItem.items.map(
         async (item: { _id: string; requiredQty: number }) => {
-          // Fetch the current product details
           const product = await ProductServices.getProductByIdFromDB(item._id);
           if (product) {
-            // Calculate the new quantity
             const newQuantity = product.quantity - item.requiredQty;
 
-            // Update the product quantity
             if (newQuantity >= 0) {
               product.quantity = newQuantity;
               await ProductServices.updateProductByIdInDB(item._id, {
                 quantity: newQuantity,
               });
             } else {
-              // Handle case where quantity goes negative
               throw new Error(`Not enough stock for product ${item._id}`);
             }
           } else {

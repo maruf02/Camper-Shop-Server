@@ -12,11 +12,11 @@ const createProduct = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
 
-// get method implement
+
 
 const getAllProducts = async (req: Request, res: Response) => {
   try {
@@ -62,7 +62,7 @@ const getAllProductsByPriceRange = async (req: Request, res: Response) => {
       data: products,
     });
   } catch (err) {
-    console.error("Error fetching products:", err); // Log the error for debugging
+    console.error("Error fetching products:", err);  
     res.status(500).json({
       success: false,
       message: "Internal Server Error",
@@ -86,7 +86,7 @@ const getAllProductsByPriceSort = async (req: Request, res: Response) => {
       data: products,
     });
   } catch (err) {
-    console.error("Error fetching products:", err); // Log the error for debugging
+    // console.error("Error fetching products:", err); 
     res.status(500).json({
       success: false,
       message: "Internal Server Error",
